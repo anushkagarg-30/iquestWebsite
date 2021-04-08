@@ -34,10 +34,25 @@ app.get('/registration',(req, res) => {
 })
 
 app.post('/registration', async (req, res) => {
-    //check email and if duplicate email is found then tell to reregister
-    const c= new registration(req.body);
-    await c.save();
-    res.redirect('/')
+    const {email}= req.body;
+    await registration.findOne({email}, async function(err,doc) {
+        if(err) {
+            console.log('error is encountered')
+            //will redirect to error page later on
+        }
+        else{
+            if(doc!=null){
+                console.log('duplicate')
+                res.redirect('/registration')
+            }
+            else{
+                const c= new registration(req.body)
+                await c.save() 
+                res.redirect('/')
+            }
+        }
+    });
+   
         
 })
 
