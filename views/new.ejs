@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico">
+  
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
+    
+    <!-- Animate.css -->
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/form.css">
+    <title>IQuest</title>
+</head>
+<body class="d-flex flex-column vh-100" onload="document.body.style.opacity='1'">
+    <main class="container mt-5">
+<div class="row">
+    <h1 class="text-center header" >Register</h1>
+    <!-- <img src="/images/register.png" alt=""> -->
+    <img class="img-responsive center" src="images/about.png" style="padding-top: 100px;">
+    <div class="col-6 offset-3"> 
+        <form action="/registration" method="post" novalidate class="needs-validation">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+        <div class="mb-3">
+            <label for="Email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="email" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="regNo" class="form-label">Registration Number</label>
+            <input type="text" class="form-control other" id="regNo" name="regNo" placeholder="Registration Number" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="phoneNo" class="form-label">WhatsApp Number</label>
+            <input type="tel" class="form-control" id="phoneNo" name="phoneNo" placeholder="XXXXXXXXXX" pattern="[0-9]{10}" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+        <button type="submit" class="btn btn-primary center">Submit</button>
+        <a href="/" type="btn" class="btn btn-danger center mt-3">Go Back</a>
+        </form>
+        
+    </div>
+</div>
+
+
+
+  
+  
+ 
+    </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        <script>// Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function () {
+              'use strict'
+            
+              // Fetch all the forms we want to apply custom Bootstrap validation styles to
+              var forms = document.querySelectorAll('.needs-validation')
+            
+              // Loop over them and prevent submission
+              Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                  form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                      event.preventDefault()
+                      event.stopPropagation()
+                    }
+            
+                    form.classList.add('was-validated')
+                  }, false)
+                })
+            })()</script>
+</body>
+</html>
