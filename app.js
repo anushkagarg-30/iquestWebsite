@@ -5,8 +5,10 @@ const registration = require('./models/registration')
 const mongoose=require('mongoose');
 const session = require('express-session')
 const flash= require('connect-flash')
-
-mongoose.connect('mongodb://localhost:27017/demo', {
+require('dotenv').config()
+console.log(process.env.url)
+//mongodb://localhost:27017/demo
+mongoose.connect(process.env.url, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology:true
