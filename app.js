@@ -55,7 +55,8 @@ app.post('/registration', async (req, res) => {
     await registration.findOne({email}, async function(err,doc) {
         if(err) {
             console.log('error is encountered')
-            //will redirect to error page later on
+            res.render('error.ejs')
+            
         }
         else{
             if(doc!=null){
@@ -71,6 +72,10 @@ app.post('/registration', async (req, res) => {
     });
    
         
+})
+
+app.all('*', (req, res)=>{
+    res.render('error.ejs')
 })
 
 
