@@ -38,7 +38,7 @@ app.use(flash())
 
 app.use((req, res, next)=>{
     res.locals.error=req.flash('error');
-
+    res.locals.success=req.flash('success');
     next();
 })
 
@@ -66,9 +66,10 @@ app.post('/registration', async (req, res) => {
             else{
                 const c= new registration(req.body)
                 await c.save() 
-                res.redirect('/')
-            }
+                req.flash('success','You have registered successfully')
+                res.redirect('/registration')
         }
+    }
     });
    
         
