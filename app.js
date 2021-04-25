@@ -5,6 +5,7 @@ const registration = require('./models/registration')
 const mongoose=require('mongoose');
 const session = require('express-session')
 const flash= require('connect-flash')
+const mongoSanitize = require('express-mongo-sanitize');
 require('dotenv').config()
 //mongodb://localhost:27017/demo
 mongoose.connect(process.env.url, {
@@ -41,6 +42,10 @@ app.use((req, res, next)=>{
     res.locals.success=req.flash('success');
     next();
 })
+
+app.use(mongoSanitize({
+    replaceWith: '_'
+  }))
 
 app.get('/',(req, res) => {
     res.sendFile('index.html')
