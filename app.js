@@ -6,7 +6,9 @@ const mongoose=require('mongoose');
 const session = require('express-session')
 const flash= require('connect-flash')
 const mongoSanitize = require('express-mongo-sanitize');
+if(process.env.NODE_ENV !== 'production'){
 require('dotenv').config()
+}
 //mongodb://localhost:27017/demo
 mongoose.connect(process.env.url, {
     useNewUrlParser: true,
