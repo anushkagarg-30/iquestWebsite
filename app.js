@@ -87,6 +87,6 @@ app.all('*', (req, res)=>{
 })
 
 const port= process.env.PORT || 3000;
-app.listen(port,() =>{
+app.listen(3000,() =>{
     console.log('server is up');
 })
